@@ -188,7 +188,7 @@ class ImageAgent:
                 image_url = result.get("image_url")
                 if local_path:
                     filename = os.path.basename(local_path)
-                    image_url = f"http://localhost:8000/output/{filename}"
+                    image_url = f"{os.getenv('API_BASE_URL', 'http://localhost:8000')}/output/{filename}"
                 return {
                     "platform": platform,
                     "topic": topic,
@@ -238,7 +238,7 @@ class ImageAgent:
             else:
                 raise Exception("No image data in DALL-E response")
 
-            local_url = f"http://localhost:8000/output/{filename}"
+            local_url = f"{os.getenv('API_BASE_URL', 'http://localhost:8000')}/output/{filename}"
             return {
                 "platform": platform,
                 "topic": topic,

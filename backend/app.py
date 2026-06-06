@@ -500,7 +500,7 @@ async def edit_flyer(request: FlyerEditRequest):
         # Export as PNG (and optionally other formats)
         base = f"flyer_edit_{uuid.uuid4().hex[:8]}"
         files = agent.export(img, base, request.formats or ["png"])
-        file_urls = {k: f"http://localhost:8000/output/{os.path.basename(v)}"
+        file_urls = {k: f"{os.getenv('API_BASE_URL', 'http://localhost:8000')}/output/{os.path.basename(v)}"
                      for k, v in files.items()}
         return {
             "success": True,
@@ -770,7 +770,7 @@ async def upload_setting_image(file: UploadFile = File(...)):
         content = await file.read()
         with open(file_path, "wb") as f:
             f.write(content)
-        url = f"{API_BASE_URL if 'API_BASE_URL' in os.environ else 'http://localhost:8000'}/output/{new_filename}"
+        url = f"{os.getenv('API_BASE_URL', 'http://localhost:8000')}/output/{new_filename}"
         return {"success": True, "url": url}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

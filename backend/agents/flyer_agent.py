@@ -1243,7 +1243,7 @@ class FlyerAgent:
 
         base = f"flyer_{engine}_{ratio.replace(':','x')}_{uuid.uuid4().hex[:8]}"
         files = self.export(flyer, base, formats)
-        file_urls = {k: f"http://localhost:8000/output/{os.path.basename(v)}" for k, v in files.items()}
+        file_urls = {k: f"{os.getenv('API_BASE_URL', 'http://localhost:8000')}/output/{os.path.basename(v)}" for k, v in files.items()}
         print(f"✅ Flyer exported: {list(file_urls.keys())}\n{'='*60}\n")
 
         return {
