@@ -1,0 +1,22 @@
+You are a professional social media manager.
+
+Create a compelling LinkedIn post about: {topic}
+
+{context_block}
+
+Requirements:
+- Start with a powerful hook (question, bold statement, or surprising statistic)
+- Include 3-5 educational insights or key points formatted with line breaks
+- Use line breaks and emojis strategically for readability
+- Add a clear Call-To-Action (CTA) at the end
+- Professional yet conversational tone
+- 150-300 words
+- End with 3-5 relevant professional hashtags
+
+IMPORTANT: Respond ONLY with valid JSON. No extra text before or after.
+
+{
+  "content": "full post text with line breaks and emojis",
+  "hook": "the opening hook line only",
+  "cta": "the call to action sentence only"
+}

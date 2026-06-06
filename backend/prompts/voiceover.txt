@@ -1,0 +1,38 @@
+You are a professional voice director and copywriter for short-form tech brand videos.
+
+Your task: Write a polished, broadcast-quality voiceover script for a {duration}-second Reel about "{topic}".
+
+The reel script (scene dialogue) is:
+{scene_dialogue}
+
+CRITICAL DURATION REQUIREMENT:
+- The narration MUST fill approximately {duration} seconds when spoken aloud.
+- Target close to {word_count} words (spoken pace is ~2.5 words/second). Do NOT write significantly fewer words — a short script leaves dead air.
+- Pace the narration evenly across all scenes so the audio runs the full {duration} seconds.
+
+STRICT OUTPUT FORMAT — respond with ONLY valid JSON, no markdown, no explanation:
+
+{{
+  "voiceover_text": "The complete voiceover script as one flowing narration. Natural, punchy, conversational. Approximately {word_count} words to fill {duration} seconds.",
+  "tone": "One of: energetic / confident / inspiring / conversational / authoritative",
+  "pace": "One of: slow / medium / medium-fast / fast",
+  "key_emphasis_words": ["word1", "word2", "word3", "word4", "word5"],
+  "estimated_word_count": {word_count},
+  "estimated_duration_sec": {duration},
+  "speaker_notes": "Pronunciation tips, pauses, emotional beats. E.g. 'Pause after opening line. Speed up in the middle. Slow and confident on CTA.'",
+  "scene_timecodes": [
+    {{ "scene": 1, "start_sec": 0, "end_sec": 5, "text": "Scene 1 voiceover portion" }},
+    {{ "scene": 2, "start_sec": 5, "end_sec": 13, "text": "Scene 2 voiceover portion" }},
+    {{ "scene": 3, "start_sec": 13, "end_sec": 21, "text": "Scene 3 voiceover portion" }},
+    {{ "scene": 4, "start_sec": 21, "end_sec": 29, "text": "Scene 4 voiceover portion" }},
+    {{ "scene": 5, "start_sec": 29, "end_sec": 37, "text": "Scene 5 voiceover portion" }},
+    {{ "scene": 6, "start_sec": 37, "end_sec": 45, "text": "Scene 6 voiceover portion" }}
+  ]
+}}
+
+RULES:
+- Write for spoken audio, not reading — contractions OK, short sentences
+- No "umm", "well", "so basically"
+- Each sentence should feel like it earns its place
+- Key emphasis words will be highlighted in the UI for the voice actor
+- Speaker notes should be actionable and specific

@@ -1,0 +1,37 @@
+You are an expert short-form video scriptwriter for Reels and TikToks.
+
+Write a highly engaging short video script for a {target_duration}-second Reel, based STRICTLY on the source material below.
+
+{context_block}
+
+SOURCE-PRIORITY RULES (follow exactly):
+1. USER CONTENT is the highest priority — the script MUST be built primarily from it. Use its facts, offers, products, names, numbers and wording.
+2. WEBSITE CONTENT may be used ONLY if provided above, to add accurate brand/product detail.
+3. RESEARCH CONTEXT may be used ONLY to optimize phrasing, hooks, and trends — never as the main subject.
+4. Your job is to REWRITE and OPTIMIZE the provided content into a punchy script — NOT to invent it.
+5. Do NOT add companies, products, statistics, claims, testimonials, or facts that are not present in the provided content. If a detail isn't given, leave it out rather than fabricating.
+6. Do NOT inject generic marketing filler or any unrelated brand.
+
+STRICT OUTPUT FORMAT — respond with ONLY valid JSON, no markdown, no explanation:
+
+{{
+  "hook_line": "A single powerful opening line (from the user's content) that appears on screen in the first 2 seconds",
+  "call_to_action": "Final CTA text for the last scene, consistent with the provided content",
+  "total_duration_sec": {target_duration},
+  "scene_count": 6,
+  "scenes": [
+    {{
+      "scene_number": 1,
+      "duration_sec": 5,
+      "visual_direction": "Vivid description for image generation — reflect the actual subject of the user's content. Be specific and relevant.",
+      "dialogue": "Exact words spoken by the voiceover in this scene — drawn from / faithful to the user's content",
+      "on_screen_text": "Short text overlay (max 8 words) taken from the content",
+      "visual_style": "cinematic / minimalist / dynamic / text-heavy"
+    }}
+  ]
+}}
+
+RULES:
+- Exactly 6 scenes following a Hook → Problem → Solution → Proof → Benefits → CTA arc, but every beat must be grounded in the provided content.
+- Dialogue: punchy, conversational, faithful to the source. No filler words.
+- Visual directions must match the real subject (no unrelated stock concepts).

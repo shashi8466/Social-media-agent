@@ -1,0 +1,29 @@
+{
+  "errors": [
+    {
+      "type": "string_too_long",
+      "loc": [
+        "body",
+        "topic"
+      ],
+      "msg": "String should have at most 1000 characters",
+      "input": "AI Video Generation Enhancement  Currently, Video Studio generates slideshow-style videos using static images, captions, and voiceovers.  Expected behavior:  Generate real AI video scenes instead of static image slides. Create motion-rich video clips with realistic human movement. Support students, teachers, classrooms, studying, learning, and educational scenarios. Include facial expressions, eye movement, hand gestures, walking, talking, and natural body motion where appropriate. Add cinematic camera movement, zooms, pans, and scene transitions. Generate short video clips for each scene and combine them into the final reel. Synchronize video scenes with the generated script and voiceover. Maintain support for 15s, 30s, 45s, 60s, and 90s durations. Maintain support for 9:16, 16:9, 1:1, and 4:5 aspect ratios.  Example:  Topic: \"Learn Anytime, Anywhere, Anything\"  Current Output:  Static image of student + voiceover  Desired Output:  Student actively studying Student taking practice tests Teacher explaining concepts Students collaborating Realistic educational scenes with movement and animation  If AI video generation is unavailable, implement advanced motion effects including:  Ken Burns animations Zoom in/out Pan effects Parallax motion Animated text Dynamic transitions",
+      "ctx": {
+        "max_length": 1000
+      }
+    }
+  ],
+  "body": {
+    "topic": "AI Video Generation Enhancement  Currently, Video Studio generates slideshow-style videos using static images, captions, and voiceovers.  Expected behavior:  Generate real AI video scenes instead of static image slides. Create motion-rich video clips with realistic human movement. Support students, teachers, classrooms, studying, learning, and educational scenarios. Include facial expressions, eye movement, hand gestures, walking, talking, and natural body motion where appropriate. Add cinematic camera movement, zooms, pans, and scene transitions. Generate short video clips for each scene and combine them into the final reel. Synchronize video scenes with the generated script and voiceover. Maintain support for 15s, 30s, 45s, 60s, and 90s durations. Maintain support for 9:16, 16:9, 1:1, and 4:5 aspect ratios.  Example:  Topic: \"Learn Anytime, Anywhere, Anything\"  Current Output:  Static image of student + voiceover  Desired Output:  Student actively studying Student taking practice tests Teacher explaining concepts Students collaborating Realistic educational scenes with movement and animation  If AI video generation is unavailable, implement advanced motion effects including:  Ken Burns animations Zoom in/out Pan effects Parallax motion Animated text Dynamic transitions",
+    "run_research": true,
+    "duration_sec": 30,
+    "aspect_ratio": "9:16",
+    "article": "",
+    "product_info": "",
+    "custom_content": "",
+    "website_url": "",
+    "blog_url": "",
+    "landing_page_url": "",
+    "company_website_url": ""
+  }
+}

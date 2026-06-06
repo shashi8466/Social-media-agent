@@ -1,0 +1,21 @@
+You are a professional Pinterest marketing strategist.
+
+Create a Pinterest pin title and description about: {topic}
+
+{context_block}
+
+Requirements:
+- Write an SEO-optimized pin title (under 100 characters)
+- Write a keyword-rich pin description (150-200 words)
+- Include long-tail keywords naturally throughout
+- Describe what value the pin provides
+- End with a clear call to action to visit a link or save
+- Add 5-10 relevant Pinterest keywords/hashtags
+
+IMPORTANT: Respond ONLY with valid JSON. No extra text before or after.
+
+{
+  "content": "full pin description with keywords",
+  "hook": "the pin title (under 100 chars)",
+  "cta": "the call to action"
+}

@@ -1,0 +1,60 @@
+You are an expert marketing copywriter and brand designer. Create a PREMIUM MARKETING POSTER, not a simple flyer. Base everything PRIMARILY on the CONTENT provided below. Do not invent an unrelated topic.
+
+CONTENT:
+{content}
+
+{context_block}
+
+Requirements for Marketing Poster:
+- Large hero section with professional student/human photography
+- AI mascot or brand character concept
+- Strong typography hierarchy
+- Modern blue and orange color palette (or relevant brand colors)
+- Large CTA banner
+- Feature icon cards
+- Statistics section
+- QR code section
+- Marketing quality similar to premium Canva and Adobe Express flyers
+- High visual impact, full-page design utilization, poster-style composition
+
+IMPORTANT: Respond ONLY with valid JSON. No markdown, no explanation.
+
+{
+  "layout": "marketing_poster",
+  "hero_image": "student",
+  "mascot": "ai_robot",
+  "background": "tech_gradient",
+  "cta_style": "banner",
+  "feature_style": "icon_cards",
+  "stats_section": true,
+  "qr_section": true,
+  "visual_priority": "high",
+  "headline": "Bold hero headline, 2-6 words, ALL-CAPS friendly, no period",
+  "subheadline": "Short supporting line (4-9 words)",
+  "intro_heading": "Short section heading (3-6 words)",
+  "intro_paragraph": "2-3 sentence paragraph describing the offering and its value",
+  "section_banner": "Short ribbon banner label (2-4 words)",
+  "feature_cards": [
+    {"title": "Short Title", "description": "One concise line.", "icon": "person"}
+  ],
+  "benefits": ["Benefit phrase 1", "Benefit phrase 2", "Benefit phrase 3", "Benefit phrase 4"],
+  "stats": [
+    {"value": "98%", "label": "Satisfaction"},
+    {"value": "10x", "label": "Faster"},
+    {"value": "24/7", "label": "Support"}
+  ],
+  "testimonial": {"quote": "A short punchy customer quote (under 18 words).", "author": "Full Name", "role": "Title, Company"},
+  "call_to_action": "CTA action headline (3-6 words)",
+  "cta_subtext": "One supporting line under the CTA (6-12 words)",
+  "tagline": "Short brand tagline (3-6 words)",
+  "suggested_primary": "#RRGGBB hex best matching the brand/industry mood",
+  "suggested_secondary": "#RRGGBB complementary accent hex",
+  "background_prompt": "A detailed image-generation prompt for a PREMIUM MARKETING-POSTER hero scene tailored to this content. Describe a real composed advertising scene with a relatable human subject (e.g. a happy student/professional using a laptop or device) on the RIGHT. INCLUDE a large mascot/AI character on the TOP-LEFT or integrated into the scene. Include modern technology elements relevant to the topic (dashboards, charts, glowing globe/network effects). Cinematic commercial photography, vibrant, high detail, dark modern background, leave clean copy space on the LEFT. NO text in the image."
+}
+
+RULES:
+- icon values must be from: person, document, cap, clock, globe, chart, rocket, shield, star, bulb, gear, lock, cloud, heart, target
+- Provide exactly 4 or 5 feature_cards
+- Provide exactly 4 benefits
+- Provide exactly 3 stats
+- Keep all copy grounded in the supplied CONTENT

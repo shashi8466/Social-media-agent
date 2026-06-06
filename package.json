@@ -1,0 +1,14 @@
+{
+  "name": "social-media-content-agent",
+  "version": "1.0.0",
+  "description": "Multi-agent AI workflow for automated social media content generation",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix frontend\" \"npm run backend\"",
+    "build": "npm run build --prefix frontend",
+    "start": "npm run start --prefix frontend",
+    "backend": "cd backend && python -m uvicorn app:app --reload --port 8000"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3"
+  }
+}

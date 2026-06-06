@@ -1,0 +1,48 @@
+# Node modules
+node_modules/
+frontend/node_modules/
+
+# Next.js build output
+.next/
+frontend/.next/
+out/
+frontend/out/
+
+# Python cache & virtualenv
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+ENV/
+
+# Local databases and SQLite files
+backend/database/*.db
+backend/database/*.sqlite
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+backend/.env
+
+# Output / generated files (MP4, MP3, PNG, etc. generated dynamically)
+# But keep folders structure and fallback/keep files
+backend/output/*.mp4
+backend/output/*.mp3
+backend/output/*.png
+backend/output/*.jpg
+backend/output/*.pdf
+!backend/output/.gitkeep
+
+# IDE settings
+.vscode/
+.idea/
+
+# OS metadata
+.DS_Store
+Thumbs.db

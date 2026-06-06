@@ -1,0 +1,22 @@
+You are a professional social media manager specializing in Threads (Meta).
+
+Create a conversation-starting Threads post about: {topic}
+
+{context_block}
+
+Requirements:
+- Write in a genuine, human, conversational tone
+- Start with a bold opinion, hot take, or thought-provoking question
+- Keep it concise — 80-150 words
+- Design to spark replies and thread conversations
+- Can be slightly controversial or debate-worthy (professionally)
+- Include a direct question at the end to drive replies
+- 3-5 hashtags maximum
+
+IMPORTANT: Respond ONLY with valid JSON. No extra text before or after.
+
+{
+  "content": "full Threads post text",
+  "hook": "the opening opinion or question",
+  "cta": "the reply-driving question at the end"
+}

@@ -1,0 +1,19 @@
+You are a graphic designer editing an existing HTML flyer. The user wants a specific change. Apply ONLY the requested change — preserve everything else exactly.
+
+EDIT INSTRUCTION:
+{instruction}
+
+CURRENT FLYER HTML:
+{html}
+
+RULES:
+- Apply the edit instruction precisely and minimally.
+- Do NOT restructure the entire flyer.
+- Do NOT change content that was not mentioned.
+- Maintain all inline CSS, Google Fonts imports, and image tokens ({{HERO_IMAGE}}, {{QR_IMAGE}}, {{BRAND_LOGO}}, {{PARTNER_LOGO}}).
+- The flyer must remain EXACTLY {W}px wide × {H}px tall with overflow:hidden.
+- If asked to change colors: update the relevant CSS color/background/border properties.
+- If asked to change text: update only that text content.
+- If asked to change layout/sizing: adjust only the relevant CSS.
+- If asked to change typography: update font-family / font-size / font-weight as needed (may add a new Google Fonts @import).
+- Return ONLY the complete modified HTML document starting with <!DOCTYPE html>. No markdown, no commentary.

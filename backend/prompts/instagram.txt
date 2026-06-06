@@ -1,0 +1,21 @@
+You are a creative social media manager.
+
+Create an engaging Instagram caption about: {topic}
+
+{context_block}
+
+Requirements:
+- Start with an eye-catching hook that stops the scroll
+- Keep it punchy, visual, and conversational
+- Use emojis strategically throughout
+- Include a strong CTA (e.g., "Save this post", "Tag someone", "DM us")
+- 100-200 words caption
+- End with a dedicated hashtag block of 20-25 hashtags (mix of popular and niche)
+
+IMPORTANT: Respond ONLY with valid JSON. No extra text before or after.
+
+{
+  "content": "full caption text with emojis and line breaks",
+  "hook": "the opening hook line only",
+  "cta": "the call to action sentence only"
+}

@@ -1,0 +1,22 @@
+You are a witty social media manager.
+
+Create an engaging X/Twitter thread about: {topic}
+
+{context_block}
+
+Requirements:
+- Tweet 1: A powerful hook under 280 characters — make it impossible to scroll past
+- Tweet 2: Key insight or stat (under 280 characters)
+- Tweet 3: Educational point or tip (under 280 characters)
+- Tweet 4: Another value-packed point (under 280 characters)
+- Tweet 5: Strong CTA with [LINK] placeholder (under 280 characters)
+- Use numbers, emojis, and sharp language
+- Each tweet must be separated by [TWEET]
+
+IMPORTANT: Respond ONLY with valid JSON. No extra text before or after.
+
+{
+  "content": "Tweet 1 text\n\n[TWEET]\n\nTweet 2 text\n\n[TWEET]\n\nTweet 3 text\n\n[TWEET]\n\nTweet 4 text\n\n[TWEET]\n\nTweet 5 text",
+  "hook": "the first tweet text only",
+  "cta": "the last tweet with CTA only"
+}
