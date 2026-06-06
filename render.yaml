@@ -1,0 +1,28 @@
+services:
+  # Next.js Frontend Web Service
+  - type: web
+    name: social-media-agent-frontend
+    env: node
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_VERSION
+        value: 18.17.0
+      - key: NEXT_PUBLIC_API_URL
+        value: http://localhost:8000 # Override this in Render Settings with your deployed backend URL
+
+  # FastAPI Python Backend Web Service
+  - type: web
+    name: social-media-agent-backend
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: STITCH_API_KEY
+        sync: false
