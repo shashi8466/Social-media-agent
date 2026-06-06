@@ -77,28 +77,33 @@ app = FastAPI(
 # Serve generated video/audio files
 app.mount("/output", StaticFiles(directory=OUTPUT_DIR), name="output")
 
-# CORS — Allow Next.js frontend
-allowed_origins = [
-    "http://localhost:3000",
-    "http://localhost:3001",
-    "http://localhost:3002",
-    "http://127.0.0.1:3000",
-    "http://127.0.0.1:3002",
-]
-env_origins = os.getenv("CORS_ALLOWED_ORIGINS")
-if env_origins:
-    for origin in env_origins.split(","):
-        origin = origin.strip()
-        if origin and origin not in allowed_origins:
-            allowed_origins.append(origin)
+# CORS — Allow dynamic origins (supports preview branches & production domains automatically)
+from fastapi import Request
+from starlette.middleware.base import BaseHTTPMiddleware
+from starlette.responses import Response
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=allowed_origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+class DynamicCORSMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next):
+        if request.method == "OPTIONS":
+            response = Response()
+            origin = request.headers.get("Origin")
+            if origin:
+                response.headers["Access-Control-Allow-Origin"] = origin
+                response.headers["Access-Control-Allow-Credentials"] = "true"
+                response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS, PATCH"
+                response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization, X-Requested-With"
+            return response
+            
+        response = await call_next(request)
+        origin = request.headers.get("Origin")
+        if origin:
+            response.headers["Access-Control-Allow-Origin"] = origin
+            response.headers["Access-Control-Allow-Credentials"] = "true"
+            response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS, PATCH"
+            response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization, X-Requested-With"
+        return response
+
+app.add_middleware(DynamicCORSMiddleware)
 
 from fastapi.exceptions import RequestValidationError
 
