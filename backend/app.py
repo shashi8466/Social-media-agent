@@ -131,7 +131,7 @@ db_agent = DatabaseAgent()
 
 # ── Request / Response Models ─────────────────────────────────────────────────
 class GenerateRequest(BaseModel):
-    topic: str = Field(..., min_length=1, max_length=1000, example="AI Automation")
+    topic: str = Field(..., min_length=1, max_length=50000, example="AI Automation")
     platforms: Optional[List[str]] = Field(
         default=["linkedin", "instagram", "twitter"],
         description="Target platforms",
@@ -155,7 +155,7 @@ class GenerateRequest(BaseModel):
 
 
 class VideoGenerateRequest(BaseModel):
-    topic: str = Field(..., min_length=1, max_length=1000, example="AI Automation for Startups")
+    topic: str = Field(..., min_length=1, max_length=50000, example="AI Automation for Startups")
     run_research: Optional[bool] = Field(default=True, description="Run research agent for richer context")
     duration_sec: Optional[int] = Field(
         default=45, ge=15, le=90,

@@ -58,17 +58,18 @@ export default function VideoForm({ onGenerate, generating }: VideoFormProps) {
 
   return (
     <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-      {/* Topic */}
+      {/* Content */}
       <div>
-        <label style={labelStyle}>📌 Video Topic *</label>
-        <input
-          type="text" value={topic} onChange={e => setTopic(e.target.value)}
-          placeholder="e.g. AI Automation for Startups..."
+        <label style={labelStyle}>📝 Content *</label>
+        <textarea
+          value={topic} onChange={e => setTopic(e.target.value)}
+          placeholder="Enter a topic, article, website content, product details, service information, or custom content (up to 6,000 words)..."
           className="input-field" required disabled={generating} id="video-topic-input"
-          maxLength={1000}
+          maxLength={50000} rows={6}
+          style={{ resize: 'vertical', fontFamily: 'inherit', fontSize: '13px' }}
         />
         <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '4px', textAlign: 'right' }}>
-          {topic.length}/1000 — long text? use Article &amp; Custom Content below
+          {topic.length}/50000
         </div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginTop: '12px' }}>
           {SUGGESTED_TOPICS.map(s => (

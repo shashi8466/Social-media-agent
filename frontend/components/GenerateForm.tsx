@@ -97,15 +97,19 @@ export default function GenerateForm({ onGenerate, generating }: GenerateFormPro
         </p>
       </div>
 
-      {/* Topic */}
+      {/* Content */}
       <div>
-        <label style={labelStyle}>📌 Topic *</label>
-        <input
-          type="text" value={topic} onChange={e => setTopic(e.target.value)}
-          placeholder="e.g. AI Automation for Small Business..."
+        <label style={labelStyle}>📝 Content *</label>
+        <textarea
+          value={topic} onChange={e => setTopic(e.target.value)}
+          placeholder="Enter a topic, article, website content, product details, service information, or custom content (up to 6,000 words)..."
           className="input-field" required disabled={generating}
-          maxLength={1000}
+          maxLength={50000} rows={6}
+          style={{ resize: 'vertical', fontFamily: 'inherit', fontSize: '13px' }}
         />
+        <div style={{ fontSize: '11px', color: 'var(--text-muted)', textAlign: 'right', marginTop: '3px' }}>
+          {topic.length}/50000
+        </div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginTop: '10px' }}>
           {SUGGESTED_TOPICS.map(s => (
             <button key={s} type="button" onClick={() => setTopic(s)} disabled={generating}
