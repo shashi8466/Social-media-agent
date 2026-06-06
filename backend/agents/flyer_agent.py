@@ -156,7 +156,7 @@ class FlyerAgent:
         return {}
 
     def generate_copy(self, content, context_block=""):
-        prompt = self._load_prompt().replace("{content}", content[:4000]).replace("{context_block}", context_block)
+        prompt = self._load_prompt().replace("{content}", content[:35000]).replace("{context_block}", context_block)
         try:
             resp = self.openai.chat.completions.create(
                 model=self.model, max_tokens=1500, timeout=80, temperature=0.7,
@@ -1037,7 +1037,7 @@ class FlyerAgent:
             "{brand}": brand_name or "",
             "{url}": display_url or "", "{contact}": contact_info or "",
             "{primary}": primary_hex, "{secondary}": secondary_hex, "{style}": style or "modern",
-            "{content}": (content or "")[:3000], "{copy_json}": copy_json,
+            "{content}": (content or "")[:35000], "{copy_json}": copy_json,
             "{design_brief}": self._design_brief(rng), "{seed}": seed,
             "{partner_note}": (f"- Partner: {partner_name} — show a tasteful 'PROUD PARTNERSHIP' bar/lockup pairing both brands."
                                if (partner_name or has_partner) else ""),

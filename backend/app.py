@@ -176,7 +176,7 @@ class VideoGenerateRequest(BaseModel):
 
 
 class FlyerRequest(BaseModel):
-    content: Optional[str] = Field(default="", max_length=6000, description="Primary content the flyer is generated from")
+    content: Optional[str] = Field(default="", max_length=50000, description="Primary content the flyer is generated from")
     topic: Optional[str] = Field(default="", max_length=2000, description="Legacy/short title (optional)")
     style: Optional[str] = Field(default="auto", description="auto|corporate|educational|modern|premium|technology|startup|marketing|event|professional")
     website_url: Optional[str] = Field(default="", max_length=500)

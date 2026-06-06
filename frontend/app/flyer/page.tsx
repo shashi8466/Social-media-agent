@@ -191,10 +191,10 @@ export default function FlyerPage() {
           <div>
             <label style={lbl}>📝 Content *</label>
             <textarea className="input-field" value={content} onChange={e => setContent(e.target.value)}
-              rows={6} maxLength={6000} disabled={generating}
+              rows={6} maxLength={50000} disabled={generating}
               placeholder="Paste what the flyer should be about — your offer, services, key points, audience, partner details. The AI designs everything from this."
               style={{ resize: 'vertical', fontFamily: 'inherit', fontSize: '13px' }} />
-            <div style={{ fontSize: '11px', color: 'var(--text-muted)', textAlign: 'right', marginTop: '3px' }}>{content.length}/6000</div>
+            <div style={{ fontSize: '11px', color: 'var(--text-muted)', textAlign: 'right', marginTop: '3px' }}>{content.length}/50000</div>
           </div>
 
           {/* Logo Upload */}
