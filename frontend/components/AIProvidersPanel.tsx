@@ -1,7 +1,9 @@
 'use client';
 import { useState, useEffect } from 'react';
 
-const API = 'http://localhost:8000';
+import { API_BASE_URL } from '@/lib/api';
+
+const API = API_BASE_URL;
 
 interface ProviderStatus {
   status: 'healthy' | 'error' | 'checking' | 'idle';

@@ -24,3 +24,6 @@ export function formatApiError(detail: any, fallback = 'Request failed'): string
   if (detail?.msg) return detail.msg;
   try { return JSON.stringify(detail); } catch { return fallback; }
 }
+
+export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+

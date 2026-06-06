@@ -2,7 +2,9 @@
 import { useState } from 'react';
 import { downloadFile } from '@/lib/download';
 
-const API = 'http://localhost:8000';
+import { API_BASE_URL } from '@/lib/api';
+
+const API = API_BASE_URL;
 
 const PLATFORM_META: Record<string, { color: string; icon: string }> = {
   linkedin:  { color: '#0077B5', icon: '💼' },

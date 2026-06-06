@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import StatCard from '@/components/StatCard';
 import RecentPosts from '@/components/RecentPosts';
 import { useSettings } from '@/app/providers/SettingsProvider';
+import { API_BASE_URL } from '@/lib/api';
 
-const API = 'http://localhost:8000';
+const API = API_BASE_URL;
 
 export default function Dashboard() {
   const { settings } = useSettings();

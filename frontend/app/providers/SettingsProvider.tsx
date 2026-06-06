@@ -1,6 +1,8 @@
 'use client';
 import { createContext, useContext, useEffect, useState } from 'react';
 
+import { API_BASE_URL } from '@/lib/api';
+
 type Settings = {
   app_name: string;
   company_name: string;
@@ -41,7 +43,7 @@ export function SettingsProvider({ children }: { children: React.ReactNode }) {
 
   const refreshSettings = async () => {
     try {
-      const res = await fetch('http://localhost:8000/api/settings');
+      const res = await fetch(`${API_BASE_URL}/api/settings`);
       if (res.ok) {
         const data = await res.json();
         if (data.success && data.data) {

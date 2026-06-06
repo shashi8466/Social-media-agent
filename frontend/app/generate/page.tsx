@@ -2,9 +2,9 @@
 import { useState, useEffect, useRef } from 'react';
 import GenerateForm from '@/components/GenerateForm';
 import ResultsPanel from '@/components/ResultsPanel';
-import { formatApiError } from '@/lib/api';
+import { formatApiError, API_BASE_URL } from '@/lib/api';
 
-const API = 'http://localhost:8000';
+const API = API_BASE_URL;
 const POLL_INTERVAL_MS = 2000;
 
 // Pipeline steps with estimated durations (seconds) for ETA display

@@ -3,9 +3,9 @@ import { useState, useEffect, useRef } from 'react';
 import VideoForm from '@/components/VideoForm';
 import VideoPipelineVisualizer from '@/components/VideoPipelineVisualizer';
 import VideoResultsPanel from '@/components/VideoResultsPanel';
-import { formatApiError } from '@/lib/api';
+import { formatApiError, API_BASE_URL } from '@/lib/api';
 
-const API = 'http://localhost:8000';
+const API = API_BASE_URL;
 const POLL_INTERVAL_MS = 3000;
 
 const STEP_MAP: Record<string, string> = {

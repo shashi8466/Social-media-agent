@@ -1,9 +1,9 @@
 'use client';
 import { useState, useRef } from 'react';
 import { downloadFile } from '@/lib/download';
-import { formatApiError } from '@/lib/api';
+import { formatApiError, API_BASE_URL } from '@/lib/api';
 
-const API = 'http://localhost:8000';
+const API = API_BASE_URL;
 
 const SIZES = [
   { id: 'a4_portrait',  label: 'A4 Portrait',  desc: 'Print',             icon: '📄' },

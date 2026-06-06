@@ -78,15 +78,23 @@ app = FastAPI(
 app.mount("/output", StaticFiles(directory=OUTPUT_DIR), name="output")
 
 # CORS — Allow Next.js frontend
+allowed_origins = [
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "http://localhost:3002",
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1:3002",
+]
+env_origins = os.getenv("CORS_ALLOWED_ORIGINS")
+if env_origins:
+    for origin in env_origins.split(","):
+        origin = origin.strip()
+        if origin and origin not in allowed_origins:
+            allowed_origins.append(origin)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://localhost:3001",
-        "http://localhost:3002",
-        "http://127.0.0.1:3000",
-        "http://127.0.0.1:3002",
-    ],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

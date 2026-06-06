@@ -1,6 +1,7 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
 import { useSettings } from '@/app/providers/SettingsProvider';
+import { API_BASE_URL } from '@/lib/api';
 
 export default function SettingsPage() {
   const { settings, refreshSettings, loading: settingsLoading } = useSettings();
@@ -24,7 +25,7 @@ export default function SettingsPage() {
   const handleSave = async () => {
     setSaving(true);
     try {
-      const res = await fetch('http://localhost:8000/api/settings', {
+      const res = await fetch(`${API_BASE_URL}/api/settings`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -45,7 +46,7 @@ export default function SettingsPage() {
     const fd = new FormData();
     fd.append('file', file);
     try {
-      const res = await fetch('http://localhost:8000/api/settings/upload', {
+      const res = await fetch(`${API_BASE_URL}/api/settings/upload`, {
         method: 'POST',
         body: fd
       });

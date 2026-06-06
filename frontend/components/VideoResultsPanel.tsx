@@ -1,7 +1,9 @@
 'use client';
 import { useState } from 'react';
 
-const API = 'http://localhost:8000';
+import { API_BASE_URL } from '@/lib/api';
+
+const API = API_BASE_URL;
 
 type Tab = 'video' | 'script' | 'voiceover' | 'social' | 'hashtags' | 'research';
 

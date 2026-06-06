@@ -1,8 +1,9 @@
 'use client';
 import { useEffect, useState } from 'react';
 import PackageCard from '@/components/PackageCard';
+import { API_BASE_URL } from '@/lib/api';
 
-const API = 'http://localhost:8000';
+const API = API_BASE_URL;
 
 export default function PostsPage() {
   const [packages, setPackages] = useState<any[]>([]);
